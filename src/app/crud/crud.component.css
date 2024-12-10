@@ -1,0 +1,54 @@
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: 20px; /* Adds some space above the button */
+  }
+  
+.button-container  button {
+    width: 200px; /* Increases the width of the button */
+    height: 50px; /* Optional: Adjust the height if needed */
+    font-size: 16px; /* Optional: Increases the font size */
+  }
+  
+  .crud-container {
+    width: 100%;
+    max-width: 800px; /* Limit maximum width */
+    margin: 0 auto; /* Center container */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Adds space between fields */
+  }
+  
+  mat-form-field {
+    width: calc(50% - 15px); /* Two columns on larger screens */
+  }
+  
+  @media (max-width: 768px) {
+    mat-form-field {
+      width: 100%; /* Single column on tablets */
+    }
+  
+    .button-container {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .crud-container {
+      padding: 10px; /* Reduce padding for small screens */
+    }
+  
+    mat-form-field {
+      width: 100%; /* Ensure full width on small screens */
+    }
+  
+    button {
+      width: 100%; /* Full-width button for mobile */
+    }
+  }
+  

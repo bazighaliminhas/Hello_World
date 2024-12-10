@@ -23,15 +23,18 @@ export class CrudComponent {
   editingIndex: number | null = null;
 
   onSubmit() {
-    if (this.editingIndex !== null) {
-      this.dataSource[this.editingIndex] = { ...this.formData };
-      this.editingIndex = null;
-    } else {
-      this.dataSource.push({ ...this.formData });
+    if (this.formData.name && this.formData.lastName && this.formData.phone && this.formData.email) {
+      if (this.editingIndex !== null) {
+        this.dataSource[this.editingIndex] = { ...this.formData };
+        this.editingIndex = null;
+      } else {
+        this.dataSource.push({ ...this.formData });
+      }
+      this.dataSource = [...this.dataSource]; // Ensure table updates
+      this.resetForm();
     }
-    this.dataSource = [...this.dataSource]; // Ensure table updates
-    this.resetForm();
   }
+  
 
   onEdit(element: any) {
     this.formData = { ...element };
